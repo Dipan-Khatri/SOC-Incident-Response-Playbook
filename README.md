@@ -2,7 +2,8 @@
 
 ## 📌 Overview
 
-This project simulates a real-world **SOC (Security Operations Center) incident response workflow** using Splunk.
+This project simulates a real-world **SOC (Security Operations Center) incident response workflow** using Splunk. 
+This project simulates a **Level 1 SOC Analyst workflow** using SIEM tools.
 
 It demonstrates how a SOC analyst:
 
@@ -14,7 +15,9 @@ It demonstrates how a SOC analyst:
 
 ## 🔥 Scenario
 
-A brute-force login detection alert was triggered due to repeated failed login attempts from a single IP address.
+A detection alert identified multiple failed login attempts originating from a single IP address within a short time window, indicating potential brute-force attack behavior. 
+**Severity:** Medium  
+**Potential Impact:** Unauthorized access attempt on user accounts 
 
 👉 Full investigation report:  
 📄 [View Incident Report](./incident-report.md)
@@ -55,16 +58,21 @@ A brute-force login detection alert was triggered due to repeated failed login a
 
 ## 🎯 Why This Project Matters
 
-This project demonstrates real SOC workflow:
+This project demonstrates how SOC analysts operate in real environments:
 
-👉 Alert → Investigation → Response
+- Monitor and triage security alerts
+- Investigate suspicious authentication activity
+- Identify brute-force attack patterns
+- Validate detections before escalation
+- Respond to potential security incidents
 
+
+It highlights the transition from **data monitoring to actionable security decisions**.
 ---
 
 ## 👨‍💻 Author
+**Dipan Khatri**  
+Cybersecurity Enthusiast | Aspiring SOC Analyst  
 
-Dipan Khatri
-Cybersecurity Enthusiast | Aspiring SOC Analyst
-
-GitHub: https://github.com/Dipan-Khatri
-LinkedIn: https://www.linkedin.com/in/dipan-khatri/
+🔗 GitHub: https://github.com/Dipan-Khatri  
+🔗 LinkedIn: https://www.linkedin.com/in/dipan-khatri/  
