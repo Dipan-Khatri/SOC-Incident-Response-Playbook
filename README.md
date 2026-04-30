@@ -16,9 +16,9 @@ It demonstrates how a SOC analyst:
 
 A brute-force login detection alert was triggered due to repeated failed login attempts from a single IP address.
 
-👉 Full investigation report:
-📄 [View Incident Report](incident-report.md)
-
+👉 Full investigation report:  
+📄 [View Incident Report](./incident-report.md)
+ 
 ---
 
 ## 🧰 Tools Used
@@ -33,11 +33,14 @@ A brute-force login detection alert was triggered due to repeated failed login a
 
 ### 🔔 Triggered Alert
 
-![Triggered Alert](PASTE_ALERT_LINK)
+
+<img width="1279" height="1150" alt="image" src="https://github.com/user-attachments/assets/92a8df98-d3dd-4619-987c-52593200856f" />
+
 
 ### 🧪 Detection Result
 
-![Detection Result](PASTE_RESULT_LINK)
+ <img width="1274" height="800" alt="image" src="https://github.com/user-attachments/assets/927f1597-399e-49e0-87ea-e8af6618a79b" />
+
 
 ---
 
