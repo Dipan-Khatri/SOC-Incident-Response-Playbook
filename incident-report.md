@@ -20,6 +20,10 @@ A scheduled alert in Splunk was triggered due to multiple failed login attempts 
 
 This behavior is consistent with a **brute-force attack**, where an attacker repeatedly attempts different password combinations to gain unauthorized access.
 
+- **Scope:** Single source IP targeting one account (admin)
+- **Potential Impact:** Account compromise if credentials guessed
+  
+
 ---
 
 ## ⚠️ Why This Is Suspicious
@@ -43,14 +47,22 @@ These indicators strongly suggest an **unauthorized access attempt**.
 
 ---
 
+## ⏱️ Timeline (Abbreviated)
+
+- T0: Alert triggered in Splunk (Scheduled search)
+- T+1m: Analyst reviews Triggered Alerts
+- T+2m: Query validated; IP identified
+- T+5m: Incident classified as brute-force attempt
+
+
 ## 🛠 Detection Query Used
 
-```
 index=* FAILED
 | rex field=_raw "(?<ip>\d+\.\d+\.\d+\.\d+)"
 | stats count by ip
 | where count > 3
-```
+
+Failed Attempts: 5+ within a 5-minute window 
 
 ---
 
@@ -58,11 +70,16 @@ index=* FAILED
 
 ### 🔔 Triggered Alert
 
-![Triggered Alert](PASTE_ALERT_IMAGE_LINK)
+<img width="1279" height="1150" alt="image" src="https://github.com/user-attachments/assets/4cba93a0-1cdd-465a-aa8d-202e1203ab62" />
+This alert shows repeated triggers for the same detection rule, indicating ongoing suspicious activity.
+
+
 
 ### 🧪 Detection Result
 
-![Detection Result](PASTE_QUERY_IMAGE_LINK)
+<img width="1274" height="800" alt="image" src="https://github.com/user-attachments/assets/47a60a55-b4f4-4766-b975-e64278f69952" /> 
+The query output confirms that IP 192.168.1.10 exceeded the defined threshold (>3 failed attempts). 
+
 
 ---
 
@@ -113,7 +130,7 @@ A single IP with repeated failed login attempts is a strong indicator of a brute
 
 ## 🎯 Conclusion
 
-The alert successfully identified suspicious login activity.
+The alert successfully identified and validated suspicious authentication activity consistent with a brute-force attack.
 This simulation demonstrates how SOC analysts detect, investigate, and respond to brute-force attacks using SIEM tools like Splunk.
 
 ---
