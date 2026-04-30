@@ -31,7 +31,13 @@ A brute-force login detection alert was triggered due to repeated failed login a
 
 ## 📸 Screenshots
 
-(Add your Splunk screenshots here next)
+### 🔔 Triggered Alert
+
+![Triggered Alert](PASTE_ALERT_LINK)
+
+### 🧪 Detection Result
+
+![Detection Result](PASTE_RESULT_LINK)
 
 ---
 
@@ -40,18 +46,15 @@ A brute-force login detection alert was triggered due to repeated failed login a
 * SOC alert investigation
 * Log analysis
 * Detection validation
-* Incident documentation
-* Security thinking
+* Incident response thinking
 
 ---
 
 ## 🎯 Why This Project Matters
 
-This project shows real SOC workflow:
+This project demonstrates real SOC workflow:
 
 👉 Alert → Investigation → Response
-
-This is exactly how SOC analysts operate in real environments.
 
 ---
 
