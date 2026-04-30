@@ -1,87 +1,64 @@
-# SOC-Incident-Response-Playbook-
+# 🚨 SOC Incident Response Playbook (Splunk)
 
-# 🚨 Incident Response Report – Brute Force Login Attempt
+## 📌 Overview
 
-## 📅 Incident Summary
+This project simulates a real-world **SOC (Security Operations Center) incident response workflow** using Splunk.
 
-* **Date Detected:** April 29, 2026
-* **Alert Name:** Brute Force Login Detection
-* **Severity:** Medium
-* **Detection Tool:** Splunk SIEM
+It demonstrates how a SOC analyst:
 
----
-
-## 🔍 What Happened?
-
-A scheduled alert in Splunk triggered due to multiple failed login attempts from a single IP address.
-
-* Suspicious IP: **192.168.1.10**
-* Failed Attempts: **5+ within short time window**
-
-This behavior is consistent with a **brute-force attack**, where an attacker repeatedly tries different passwords.
+* Detects a brute-force attack
+* Investigates suspicious login activity
+* Responds to security alerts
 
 ---
 
-## ⚠️ Why This Is Suspicious
+## 🔥 Scenario
 
-* High number of failed login attempts
-* Rapid repeated activity (possible automation)
-* Targeting privileged account: **admin**
+A brute-force login detection alert was triggered due to repeated failed login attempts from a single IP address.
 
----
-
-## 🧪 Investigation Steps (SOC Workflow)
-
-1. Checked Splunk alert (Triggered Alerts section)
-2. Verified detection query results
-3. Identified IP with abnormal activity
-4. Analyzed login timeline
-5. Reviewed targeted usernames
-6. Confirmed repeated FAILED status
+👉 Full investigation report:
+📄 [View Incident Report](incident-report.md)
 
 ---
 
-## 🛠 Detection Query Used
+## 🧰 Tools Used
 
-```
-index=* FAILED
-| rex field=_raw "(?<ip>\d+\.\d+\.\d+\.\d+)"
-| stats count by ip
-| where count > 3
-```
+* Splunk Enterprise
+* SPL (Search Processing Language)
+* Regex (`rex`)
 
 ---
 
-## 🧾 Evidence
+## 📸 Screenshots
 
-* Alert triggered in Splunk
-* IP with repeated failed attempts
-* Log patterns showing brute-force behavior
-
-(Screenshots included in repository)
+(Add your Splunk screenshots here next)
 
 ---
 
-## 🧯 Response Actions (Simulated)
+## 🧠 Skills Demonstrated
 
-* 🚫 Block suspicious IP address
-* 🔐 Lock affected account temporarily
-* 📢 Notify security team
-* 📊 Monitor for further activity
-
----
-
-## 🧠 Lessons Learned
-
-* Detection thresholds are critical
-* Early alerts help prevent compromise
-* Log analysis reveals attack patterns
+* SOC alert investigation
+* Log analysis
+* Detection validation
+* Incident documentation
+* Security thinking
 
 ---
 
-## 🎯 Conclusion
+## 🎯 Why This Project Matters
 
-The alert successfully detected suspicious login behavior.
-This simulation demonstrates how SOC analysts investigate and respond to brute-force attacks.
+This project shows real SOC workflow:
+
+👉 Alert → Investigation → Response
+
+This is exactly how SOC analysts operate in real environments.
 
 ---
+
+## 👨‍💻 Author
+
+Dipan Khatri
+Cybersecurity Enthusiast | Aspiring SOC Analyst
+
+GitHub: https://github.com/Dipan-Khatri
+LinkedIn: https://www.linkedin.com/in/dipan-khatri/
